@@ -1,0 +1,55 @@
+table {
+  border-spacing: 0;
+  border: 1px solid black;
+  width: 90%; 
+  margin: auto;
+
+  tr {
+    &:nth-child(even) {
+      background: #d3d3d375
+    }
+    &:last-child {
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  thead tr {
+    background: #5aa4f982;
+  }
+
+  th,
+  td {
+    margin: 0;
+    padding: 1.25rem 0.75rem;
+    border-bottom: 1px solid grey;
+    text-align: right;
+
+    &:first-child {
+      text-align: left;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.pagination {
+  margin-top: 16px;
+  text-align: center;
+
+  button {
+    font-size: 24px;
+    margin: 8px;
+  }
+}
+
+.search-players {
+  margin-left: 16px; 
+}
