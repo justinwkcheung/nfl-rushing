@@ -1,16 +1,22 @@
 import React from "react";
 import { useTable, useFilters, useSortBy, usePagination } from 'react-table'
+import { CSVLink } from "react-csv";
 import "./styles.scss";
 
 const App = (props) => {
-  console.log(props);
-
   const data = props.players;
 
+  const getExportableData = (tableInstance) => {
+    const filteredData = tableInstance.filteredRows.map((filteredRow) => {
+      return filteredRow["values"];
+    })
+
+    return filteredData;
+  }
+
   function DefaultColumnFilter({
-    column: { filterValue, preFilteredRows, setFilter },
+    column: { filterValue, setFilter },
   }) {
-    const count = preFilteredRows.length
 
     return (
       <input
@@ -141,7 +147,7 @@ const App = (props) => {
 
   return (
     <div>
-      <pre>
+      {/* <pre>
         <code>
           {JSON.stringify(
             {
@@ -155,8 +161,15 @@ const App = (props) => {
             2
           )}
         </code>
-      </pre>
+      </pre> */}
+
       <h1 className="title">NFL Rushing Stats</h1>
+
+      <div className="export-buttons">
+        <CSVLink data={getExportableData(tableInstance)} filename="nfl-rushing.csv">Download Filtered Stats</CSVLink>
+        <CSVLink data={data} filename="nfl-rushing.csv">Download All Stats</CSVLink>
+      </div>
+
       <table {...getTableProps()}>
         <thead>
           {

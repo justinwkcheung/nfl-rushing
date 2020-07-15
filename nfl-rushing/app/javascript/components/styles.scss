@@ -37,7 +37,9 @@ table {
 }
 
 .title {
+  font-size: 44px;
   text-align: center;
+  margin-top: 100px;
 }
 
 .pagination {
@@ -47,6 +49,22 @@ table {
   button {
     font-size: 24px;
     margin: 8px;
+  }
+}
+
+.export-buttons {
+  text-align: center;
+  margin: 48px 0;
+
+  a {
+    margin: 20px 12px;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #FFF;
+    width: 200px;
   }
 }
 
