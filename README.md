@@ -55,9 +55,13 @@ If you have any questions regarding requirements, do not hesitate to email your 
 
 ### Installation and running this solution
 
-Once you have cloned this project, you can get started on running it. 
+Once you have cloned this project, you can get started on running the application. 
 
-# 1. Create an .env file in the main directory 
+## 1. Navigate into the nfl-app directory
+
+`cd nfl-app`
+
+## 2. Create an .env file and populate with following info: 
 ```
 # Rails Application
 DB_NAME=mysql
@@ -71,14 +75,14 @@ MYSQL_DATABASE=mysql
 MYSQL_USER=${mysql_user_your_choice}
 MYSQL_PASSWORD=${mysql_password_your_choice}
 ```
-# 2. Build the docker app for the first time
+## 3. Build the docker app for the first time
 ```
 $ make build
 ```
 
 This command runs docker-compose up --build, both the app and database containers will be set up after.
 
-# 3. Migrate and seed data 
+## 4. Migrate and seed data 
 
 In a separate terminal window, in the same directory, run: 
 
