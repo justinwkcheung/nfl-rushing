@@ -1,7 +1,17 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: nfl-rushing
   pool: 5
-  username: root
-  password: password
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
+
+default: 
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOST'] %>
