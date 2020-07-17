@@ -1,0 +1,73 @@
+table {
+  border-spacing: 0;
+  border: 1px solid black;
+  width: 90%; 
+  margin: auto;
+
+  tr {
+    &:nth-child(even) {
+      background: #d3d3d375
+    }
+    &:last-child {
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  thead tr {
+    background: #5aa4f982;
+  }
+
+  th,
+  td {
+    margin: 0;
+    padding: 1.25rem 0.75rem;
+    border-bottom: 1px solid grey;
+    text-align: right;
+
+    &:first-child {
+      text-align: left;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+.title {
+  font-size: 44px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.pagination {
+  margin-top: 16px;
+  text-align: center;
+
+  button {
+    font-size: 24px;
+    margin: 8px;
+  }
+}
+
+.export-buttons {
+  text-align: center;
+  margin: 48px 0;
+
+  a {
+    margin: 20px 12px;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #FFF;
+    width: 200px;
+  }
+}
+
+.search-players {
+  margin-left: 16px; 
+}
