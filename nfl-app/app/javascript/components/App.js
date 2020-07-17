@@ -137,7 +137,6 @@ const App = (props) => {
     headerGroups,
     prepareRow,
     page,
-    pageCount,
     canPreviousPage,
     canNextPage,
     nextPage,
@@ -147,22 +146,6 @@ const App = (props) => {
 
   return (
     <div>
-      {/* <pre>
-        <code>
-          {JSON.stringify(
-            {
-              pageSize,
-              pageIndex,
-              pageCount,
-              canNextPage,
-              canPreviousPage,
-            },
-            null,
-            2
-          )}
-        </code>
-      </pre> */}
-
       <h1 className="title">NFL Rushing Stats</h1>
 
       <div className="export-buttons">
