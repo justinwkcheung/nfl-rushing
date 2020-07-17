@@ -14,6 +14,14 @@ const App = (props) => {
     return filteredData;
   }
 
+  const getAllData = (tableInstance) => {
+    const filteredData = tableInstance.preFilteredRows.map((filteredRow) => {
+      return filteredRow["values"];
+    })
+
+    return filteredData; 
+  }
+
   function DefaultColumnFilter({
     column: { filterValue, setFilter },
   }) {
@@ -46,82 +54,82 @@ const App = (props) => {
       },
       {
         Header: 'Team',
-        accessor: 'team',
+        accessor: row => row.team,
         disableSortBy: true,
         disableFilters: true,
       },
       {
         Header: 'Pos',
-        accessor: 'position',
+        accessor: row => row.position,
         disableSortBy: true,
         disableFilters: true,
       },
       {
         Header: 'Att',
-        accessor: 'att',
+        accessor: row => row.att,
         disableSortBy: true,
         disableFilters: true,
       },
       {
         Header: 'Att/G',
-        accessor: 'att_per_g',
+        accessor: row => row.att_per_g,
         disableSortBy: true,
         disableFilters: true,
       },
       {
         Header: 'Yds',
-        accessor: 'yds',
+        accessor: row => row.yds,
         disableFilters: true,
       },
       {
         Header: 'Avg',
-        accessor: 'yds_avg',
+        accessor: row => row.yds_avg,
         disableSortBy: true,
         disableFilters: true,
       },
       {
         Header: 'Yds/G',
-        accessor: 'yds_per_g',
+        accessor: row => row.yds_per_g,
         disableSortBy: true,
         disableFilters: true,
       },
       {
         Header: 'TD',
-        accessor: 'td',
+        accessor: row => row.td,
         disableFilters: true,
       },
       {
         Header: 'Lng',
-        accessor: 'lng',
+        accessor: row => row.lng,
         disableFilters: true,
       },
       {
         Header: '1st',
-        accessor: 'first',
+        accessor: row => row.first,
         disableSortBy: true,
         disableFilters: true,
       },
       {
         Header: '1st%',
-        accessor: 'first_percentage',
+        accessor: row => row.first_percentage,
         disableSortBy: true,
         disableFilters: true,
       },
       {
         Header: '20+',
-        accessor: 'twenty_yard_carries',
+        accessor: row => row.twenty_yard_carries,
         disableSortBy: true,
         disableFilters: true,
       },
       {
         Header: '40+',
-        accessor: 'fourty_yard_carries',
+        accessor: row => row.fourty_yard_carries,
         disableSortBy: true,
         disableFilters: true,
       },
       {
         Header: 'FUM',
-        accessor: 'fum',
+        accessor: row => row.fum,
         disableSortBy: true,
         disableFilters: true,
       },
@@ -150,7 +158,7 @@ const App = (props) => {
 
       <div className="export-buttons">
         <CSVLink data={getExportableData(tableInstance)} filename="nfl-rushing.csv">Download Filtered Stats</CSVLink>
-        <CSVLink data={data} filename="nfl-rushing.csv">Download All Stats</CSVLink>
+        <CSVLink data={getAllData(tableInstance)} filename="nfl-rushing.csv">Download All Stats</CSVLink>
       </div>
 
       <table {...getTableProps()}>
